@@ -144,12 +144,11 @@
 				537731C519C212A300C08376 /* OWAppDelegate.h */,
 				537731C619C212A300C08376 /* OWAppDelegate.m */,
 				537731C819C212A300C08376 /* Main.storyboard */,
-				537731EB19C2135D00C08376 /* OWOuterSpaceTableViewController.h */,
-				537731EC19C2135D00C08376 /* OWOuterSpaceTableViewController.m */,
 				53CF353B19C83CDB00F81121 /* OWSpaceImageViewController.h */,
 				53CF353C19C83CDB00F81121 /* OWSpaceImageViewController.m */,
-				5301093319C76FA600F2CBD4 /* OWOuterSpaceObject.h */,
-				5301093419C76FA600F2CBD4 /* OWOuterSpaceObject.m */,
+				537731EB19C2135D00C08376 /* OWOuterSpaceTableViewController.h */,
+				537731EC19C2135D00C08376 /* OWOuterSpaceTableViewController.m */,
+				53DA867419C96D66006ED5B7 /* Model */,
 				537731CE19C212A300C08376 /* Images.xcassets */,
 				537731BD19C212A300C08376 /* Supporting Files */,
 			);
@@ -195,6 +194,15 @@
 				537731DE19C212A300C08376 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		53DA867419C96D66006ED5B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5301093319C76FA600F2CBD4 /* OWOuterSpaceObject.h */,
+				5301093419C76FA600F2CBD4 /* OWOuterSpaceObject.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
