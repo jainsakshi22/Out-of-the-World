@@ -31,6 +31,9 @@
     self.scrollView.contentSize = self.imageView.frame.size;
     [self.scrollView addSubview: self.imageView];
     
+    self.scrollView.delegate = self;        //This delegate will call viewForZoomingInScrollView method
+    self.scrollView.maximumZoomScale = 2.0; //Without this zooming will not work
+    self.scrollView.minimumZoomScale = 0.5;
     
 }
 
@@ -38,6 +41,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//After declaring protocol on header file, search for this method here.
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return  self.imageView;
 }
 
 /*
