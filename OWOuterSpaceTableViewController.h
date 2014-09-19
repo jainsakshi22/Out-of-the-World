@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OWOuterSpaceObject.h"
 
 @interface OWOuterSpaceTableViewController : UITableViewController
 
 @property (strong,nonatomic) NSMutableArray *planets;
+
 
 @end

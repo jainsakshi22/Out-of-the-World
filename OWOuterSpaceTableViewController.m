@@ -9,6 +9,7 @@
 #import "OWOuterSpaceTableViewController.h"
 #import "OWOuterSpaceObject.h"
 #import "AstronomicalData.h"
+#import "OWSpaceImageViewController.h"
 
 @interface OWOuterSpaceTableViewController ()
 
@@ -75,6 +76,21 @@
 //    intnumber2 = [NSNumber numberWithInt: 100];
 //    NSLog(@"%@", intnumber2);
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass: [UITableViewCell class]])
+    {
+        if ([segue.destinationViewController isKindOfClass: [OWSpaceImageViewController class]])
+        {
+            OWSpaceImageViewController *nextController = segue.destinationViewController;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            OWOuterSpaceObject *selectedObject = self.planets[indexPath.row];
+            nextController.spaceObject = selectedObject;
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
