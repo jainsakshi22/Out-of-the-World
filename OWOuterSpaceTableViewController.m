@@ -149,10 +149,15 @@
 //    {
 //        cell.backgroundColor = [UIColor blueColor];
 //    }
-//
-   
     
     return cell;
+}
+
+#pragma mark - UITable View Delegate
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"button pressed for %i row", indexPath.row);
 }
 
 
