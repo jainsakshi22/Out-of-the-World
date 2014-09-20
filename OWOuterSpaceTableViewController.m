@@ -10,6 +10,7 @@
 #import "OWOuterSpaceObject.h"
 #import "AstronomicalData.h"
 #import "OWSpaceImageViewController.h"
+#import "OWSpaceDataViewController.h"
 
 @interface OWOuterSpaceTableViewController ()
 
@@ -89,6 +90,17 @@
             nextController.spaceObject = selectedObject;
         }
     }
+    
+    if ([sender isKindOfClass: [NSIndexPath class]])
+    {
+        if ([segue.destinationViewController isKindOfClass: [OWSpaceDataViewController class]])
+        {
+            OWSpaceDataViewController *targetViewController = segue.destinationViewController;
+            NSIndexPath *path = sender;
+            OWOuterSpaceObject *selectedObject = [self.planets objectAtIndex:path.row];
+            targetViewController.spaceObject = selectedObject;
+        }
+    }
 }
 
 
@@ -154,10 +166,10 @@
 }
 
 #pragma mark - UITable View Delegate
-
+//method when accessory property is changed in this controller
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"button pressed for %i row", indexPath.row);
+    [self performSegueWithIdentifier: @"push to space data" sender:indexPath];
 }
 
 

@@ -47,6 +47,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Planets" id="b5z-ni-9K2"/>
+                    <connections>
+                        <segue destination="g3y-LQ-J7Q" kind="push" identifier="push to space data" id="oFL-Wy-FWE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ag-jn-8GC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +74,7 @@
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataCell" textLabel="p7l-Kq-jsB" detailTextLabel="Oeu-Mn-hTd" style="IBUITableViewCellStyleValue1" id="1YZ-R2-35f">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1YZ-R2-35f" id="yw0-rd-KUW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -104,6 +107,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="INz-16-qQr"/>
                     <connections>
                         <outlet property="tableView" destination="DBb-z3-8N8" id="LUi-HS-Dc5"/>
                     </connections>
