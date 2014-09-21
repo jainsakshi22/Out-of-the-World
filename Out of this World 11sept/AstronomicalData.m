@@ -37,7 +37,7 @@
     [planetInformation addObject:uranusDictionary];
     
     NSDictionary *neptuneDictionary = @{PLANET_NAME : @"Neptune", PLANET_GRAVITY : @11.0, PLANET_DIAMETER : @49528, PLANET_YEAR_LENGTH : @59800, PLANET_DAY_LENGTH : @16.1, PLANET_TEMPERATURE : @-100, PLANET_NUMBER_OF_MOONS : @14, PLANET_NICKNAME : @"Poseidon", PLANET_INTERESTING_FACT : @"Neptune was discovered in 1846"};
-    [planetInformation addObject:neptuneDictionary];
+    [planetInformation addObject:neptuneDictionary];    
     
     return [planetInformation copy];
 }

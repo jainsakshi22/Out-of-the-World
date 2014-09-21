@@ -35,6 +35,7 @@
 		537731F019C22DD200C08376 /* AstronomicalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 537731EE19C22DD200C08376 /* AstronomicalData.m */; };
 		539F733819CD566C00D5F00F /* OWSpaceDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539F733719CD566C00D5F00F /* OWSpaceDataViewController.m */; };
 		53CF353D19C83CDB00F81121 /* OWSpaceImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CF353C19C83CDB00F81121 /* OWSpaceImageViewController.m */; };
+		53E4434C19CEF4F1003C4A96 /* OWAddSpaceObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4434B19CEF4F1003C4A96 /* OWAddSpaceObjectViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		539F733719CD566C00D5F00F /* OWSpaceDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSpaceDataViewController.m; sourceTree = "<group>"; };
 		53CF353B19C83CDB00F81121 /* OWSpaceImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWSpaceImageViewController.h; sourceTree = "<group>"; };
 		53CF353C19C83CDB00F81121 /* OWSpaceImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWSpaceImageViewController.m; sourceTree = "<group>"; };
+		53E4434A19CEF4F1003C4A96 /* OWAddSpaceObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWAddSpaceObjectViewController.h; sourceTree = "<group>"; };
+		53E4434B19CEF4F1003C4A96 /* OWAddSpaceObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWAddSpaceObjectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				537731C519C212A300C08376 /* OWAppDelegate.h */,
 				537731C619C212A300C08376 /* OWAppDelegate.m */,
 				537731C819C212A300C08376 /* Main.storyboard */,
+				53E4434A19CEF4F1003C4A96 /* OWAddSpaceObjectViewController.h */,
+				53E4434B19CEF4F1003C4A96 /* OWAddSpaceObjectViewController.m */,
 				53CF353B19C83CDB00F81121 /* OWSpaceImageViewController.h */,
 				53CF353C19C83CDB00F81121 /* OWSpaceImageViewController.m */,
 				537731EB19C2135D00C08376 /* OWOuterSpaceTableViewController.h */,
@@ -317,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E4434C19CEF4F1003C4A96 /* OWAddSpaceObjectViewController.m in Sources */,
 				537731ED19C2135D00C08376 /* OWOuterSpaceTableViewController.m in Sources */,
 				537731C719C212A300C08376 /* OWAppDelegate.m in Sources */,
 				537731C319C212A300C08376 /* main.m in Sources */,

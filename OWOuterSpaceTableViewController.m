@@ -116,22 +116,29 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    
+    if ([self.addedSpaceObjects count] )
+    {
+        return 2;
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-//    if(section == 0)
-//    {
-//        return 3;
-//    }
-//    else
-//    {
-//        return 2;
-//    }
+    if(section == 1)
+    {
+        return [self.addedSpaceObjects count];
+    }
+    else
+    {
     return [self.planets count];
+    }
 }
 
 
@@ -139,12 +146,19 @@
 {
     static NSString *cellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
+    if (indexPath.section == 1)
+    {
+        /*Set new space object */
+        
+    }
+    else
+    {
     OWOuterSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
     cell.textLabel.text = planet.name;
     cell.detailTextLabel.text = planet.nickName;
     cell.imageView.image = planet.spaceImage;
-    
+    }
+    /*** Customize the appearance of cell ***/
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
