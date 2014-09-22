@@ -7,6 +7,7 @@
 //
 
 #import "OWSpaceDataViewController.h"
+#import "AstronomicalData.h"
 
 @interface OWSpaceDataViewController ()
 
@@ -88,7 +89,12 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    //return 8;
+    NSArray *array = [AstronomicalData allKnownPlanets];
+    NSDictionary *planet =[array objectAtIndex:0];
+ //   NSLog(@"%i", [[planet allKeys] count]);
+    // 1 is subtracted because dictionary has 9 keys and 1 key(name) is not displayed in row.
+    return ([[planet allKeys] count]-1);
 }
 
 /*

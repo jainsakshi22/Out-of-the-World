@@ -88,6 +88,7 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             OWOuterSpaceObject *selectedObject = self.planets[indexPath.row];
             nextController.spaceObject = selectedObject;
+           
         }
     }
     
@@ -100,6 +101,12 @@
             OWOuterSpaceObject *selectedObject = [self.planets objectAtIndex:path.row];
             targetViewController.spaceObject = selectedObject;
         }
+    }
+    
+    if ([segue.destinationViewController isKindOfClass: [OWAddSpaceObjectViewController class]])
+    {
+        OWAddSpaceObjectViewController *addSpaceObjectVC = segue.destinationViewController;
+        addSpaceObjectVC.delegate = self;
     }
 }
 
@@ -186,6 +193,20 @@
     [self performSegueWithIdentifier: @"push to space data" sender:indexPath];
 }
 
+
+#pragma mark - OWAddSPaceObjectDelegate Delegate
+
+-(void)didCancel
+{
+    NSLog (@"cancel working");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)addSpaceObject
+{
+    NSLog(@"add space object working");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 // Override to support conditional editing of the table view.

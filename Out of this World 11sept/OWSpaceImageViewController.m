@@ -31,7 +31,8 @@
     self.scrollView.contentSize = self.imageView.frame.size;
     [self.scrollView addSubview: self.imageView];
     
-    self.scrollView.delegate = self;        //This delegate will call viewForZoomingInScrollView method
+   // self.scrollView.delegate = self;        //This delegate will call viewForZoomingInScrollView method.Also, we can drag delegate from main.storyboard instead of this.
+    
     self.scrollView.maximumZoomScale = 2.0; //Without this zooming will not work
     self.scrollView.minimumZoomScale = 0.5;
     
