@@ -85,8 +85,18 @@
         if ([segue.destinationViewController isKindOfClass: [OWSpaceImageViewController class]])
         {
             OWSpaceImageViewController *nextController = segue.destinationViewController;
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-            OWOuterSpaceObject *selectedObject = self.planets[indexPath.row];
+            NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            OWOuterSpaceObject *selectedObject ;
+            
+            if (path.section == 0)
+            {
+                selectedObject = self.planets[path.row];
+            }
+            else if (path.section ==1)
+            {
+                selectedObject = self.addedSpaceObjects[path.row];
+            }
+            
             nextController.spaceObject = selectedObject;
            
         }
@@ -98,7 +108,17 @@
         {
             OWSpaceDataViewController *targetViewController = segue.destinationViewController;
             NSIndexPath *path = sender;
-            OWOuterSpaceObject *selectedObject = [self.planets objectAtIndex:path.row];
+            OWOuterSpaceObject *selectedObject;
+            
+            if (path.section == 0)
+            {
+                selectedObject = [self.planets objectAtIndex:path.row];
+            }
+            else if (path.section == 1)
+            {
+                selectedObject = [self.addedSpaceObjects objectAtIndex:path.row];
+            }
+            
             targetViewController.spaceObject = selectedObject;
         }
     }
@@ -170,6 +190,7 @@
     cell.detailTextLabel.text = planet.nickName;
     cell.imageView.image = planet.spaceImage;
     }
+    
     /*** Customize the appearance of cell ***/
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor whiteColor];
