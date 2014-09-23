@@ -18,6 +18,26 @@
 
 @implementation OWOuterSpaceTableViewController
 
+#pragma mark -Lazy Instantiation of Properties
+
+-(NSMutableArray *)planets
+{
+    if (!_planets)
+    {
+        _planets = [[NSMutableArray alloc] init];
+    }
+    return _planets;
+}
+
+-(NSMutableArray *)addedSpaceObjects
+{
+    if (!_addedSpaceObjects)
+    {
+        _addedSpaceObjects = [[NSMutableArray alloc] init];
+    }
+    return _addedSpaceObjects;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -48,7 +68,7 @@
 //    NSString *planet8 = @"Neptune";
 //    NSString *planet9 = @"Pluto";
     
-    self.planets = [[NSMutableArray alloc] init];
+   // self.planets = [[NSMutableArray alloc] init]; //underscore is used in getter methods while self is used in other methods
     
     for (NSDictionary *planetData in [AstronomicalData allKnownPlanets])
     {
@@ -230,10 +250,11 @@
 
 -(void)addSpaceObject:(OWOuterSpaceObject *)spaceObject
 {
-    if (!self.addedSpaceObjects)
-    {
-        self.addedSpaceObjects = [[NSMutableArray alloc] init];
-    }
+    //Comment this code as we have declared a getter method above
+//    if (!self.addedSpaceObjects)
+//    {
+//        self.addedSpaceObjects = [[NSMutableArray alloc] init];
+//    }
     [self.addedSpaceObjects addObject:spaceObject];
     NSLog(@"Add space object working");
     [self dismissViewControllerAnimated:YES completion:nil];
