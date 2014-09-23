@@ -159,7 +159,7 @@
         OWOuterSpaceObject *spaceObject = [self.addedSpaceObjects objectAtIndex:indexPath.row];
         cell.textLabel.text = spaceObject.name;
         cell.detailTextLabel.text = spaceObject.nickName;
-       // cell.imageView.image = spaceObject.spaceImage;
+        cell.imageView.image = spaceObject.spaceImage;
         
     }
     else
