@@ -155,11 +155,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if (indexPath.section == 1)
     {
-        /*Set new space object */
+        /*Set new space object from added space object array*/
+        OWOuterSpaceObject *spaceObject = [self.addedSpaceObjects objectAtIndex:indexPath.row];
+        cell.textLabel.text = spaceObject.name;
+        cell.detailTextLabel.text = spaceObject.nickName;
+       // cell.imageView.image = spaceObject.spaceImage;
         
     }
     else
     {
+        /* Access the space object from planets array*/
     OWOuterSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
     cell.textLabel.text = planet.name;
     cell.detailTextLabel.text = planet.nickName;
@@ -202,11 +207,19 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)addSpaceObject
+-(void)addSpaceObject:(OWOuterSpaceObject *)spaceObject
 {
-    NSLog(@"add space object working");
+    if (!self.addedSpaceObjects)
+    {
+        self.addedSpaceObjects = [[NSMutableArray alloc] init];
+    }
+    [self.addedSpaceObjects addObject:spaceObject];
+    NSLog(@"Add space object working");
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self.tableView reloadData];
 }
+
 
 /*
 // Override to support conditional editing of the table view.

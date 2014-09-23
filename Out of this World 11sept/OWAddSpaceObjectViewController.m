@@ -7,6 +7,7 @@
 //
 
 #import "OWAddSpaceObjectViewController.h"
+#import "OWOuterSpaceObject.h"
 
 @interface OWAddSpaceObjectViewController ()
 
@@ -56,7 +57,22 @@
 
 - (IBAction)addButtonPressed:(UIButton *)sender
 {
-    [self.delegate addSpaceObject];
+    OWOuterSpaceObject *newSpaceObject = [self returnNewSpaceObject];
+    [self.delegate addSpaceObject:newSpaceObject];
 }
+
+-(OWOuterSpaceObject *)returnNewSpaceObject
+{
+    OWOuterSpaceObject *addedSpaceObject = [[OWOuterSpaceObject alloc] init];
+    addedSpaceObject.name = self.nameTextField.text;
+    addedSpaceObject.nickName = self.nicknameTextField.text;
+    addedSpaceObject.diameter = [self.diamterTextField.text floatValue];
+    addedSpaceObject.temperature = [self.temperatureTextField.text floatValue];
+    addedSpaceObject.numberOfMoon = [self.numberOfMoonsTextField.text intValue];
+    addedSpaceObject.interestFact = self.interestingFactTextField.text;
+    
+    return addedSpaceObject;
+}
+
 
 @end
