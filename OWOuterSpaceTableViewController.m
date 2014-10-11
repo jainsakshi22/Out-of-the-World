@@ -256,12 +256,24 @@
 //        self.addedSpaceObjects = [[NSMutableArray alloc] init];
 //    }
     [self.addedSpaceObjects addObject:spaceObject];
+    
+    //Will save to NSUSerDefaults here
+    
     NSLog(@"Add space object working");
     [self dismissViewControllerAnimated:YES completion:nil];
     
     [self.tableView reloadData];
 }
 
+#pragma mark - Helper methods
+
+-(NSDictionary *)spaceObjectAsAPropertyList :(OWOuterSpaceObject *)spaceObject
+{
+    NSData *imageData = UIImagePNGRepresentation(spaceObject.spaceImage);
+    NSDictionary *dictionary = @{PLANET_NAME : spaceObject.name, PLANET_GRAVITY : @(spaceObject.gravitationalForce), PLANET_DIAMETER : @(spaceObject.diameter),PLANET_YEAR_LENGTH : @(spaceObject.yearLength), PLANET_DAY_LENGTH : @(spaceObject.dayLength), PLANET_TEMPERATURE : @(spaceObject.temperature), PLANET_NUMBER_OF_MOONS : @(spaceObject.numberOfMoon), PLANET_NICKNAME :spaceObject.nickName, PLANET_INTERESTING_FACT : spaceObject.interestFact, PLANET_IMAGE : imageData};
+    
+    return dictionary;
+}
 
 /*
 // Override to support conditional editing of the table view.

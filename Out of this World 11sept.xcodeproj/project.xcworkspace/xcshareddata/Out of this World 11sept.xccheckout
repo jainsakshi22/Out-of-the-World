@@ -12,20 +12,24 @@
 	<dict>
 		<key>77F8BC9E-7FC0-44E5-81AF-A2F3319673B4</key>
 		<string>https://github.com/jainsakshi22/Out-of-the-World.git</string>
+		<key>ADC18CDED3E86C055191B36A57C78D11D4EA2A6D</key>
+		<string>https://github.com/jainsakshi22/Out-of-the-World.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Out of this World 11sept.xcodeproj/project.xcworkspace</string>
+	<string>Out of this World 11sept.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>77F8BC9E-7FC0-44E5-81AF-A2F3319673B4</key>
+		<string>../../../Out of this World 11sept</string>
+		<key>ADC18CDED3E86C055191B36A57C78D11D4EA2A6D</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/jainsakshi22/Out-of-the-World.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>77F8BC9E-7FC0-44E5-81AF-A2F3319673B4</string>
+	<string>ADC18CDED3E86C055191B36A57C78D11D4EA2A6D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>77F8BC9E-7FC0-44E5-81AF-A2F3319673B4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Out of this World 11sept</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ADC18CDED3E86C055191B36A57C78D11D4EA2A6D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Out%20of%20this%20World%2011sept</string>
 		</dict>
 	</array>
 </dict>

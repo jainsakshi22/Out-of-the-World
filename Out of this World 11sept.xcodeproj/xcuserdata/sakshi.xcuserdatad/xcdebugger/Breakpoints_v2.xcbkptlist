@@ -139,8 +139,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "@interface OWAddSpaceObjectViewController"
-            landmarkType = "2">
+            landmarkName = "nameTextField"
+            landmarkType = "19">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -185,8 +185,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
-            landmarkName = "@implementation OWAddSpaceObjectViewController"
-            landmarkType = "3">
+            landmarkName = "-addButtonPressed:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
