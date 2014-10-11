@@ -78,6 +78,15 @@
         OWOuterSpaceObject *planet = [[OWOuterSpaceObject alloc] initWithData:planetData andImage: [UIImage imageNamed: imageName]];
         [self.planets addObject:planet];
     }
+    
+    
+    NSArray *myPlanetsAsPropertyLists = [[NSUserDefaults standardUserDefaults] arrayForKey:ADDED_SPACE_OBJECT_KEY];
+    
+    for (NSDictionary *dictionary in myPlanetsAsPropertyLists)
+    {
+        OWOuterSpaceObject *spaceObject = [self spaceObjectForDictionary:dictionary];
+        [self.addedSpaceObjects addObject:spaceObject];
+    }
 //    [self.planets addObject: planet9];
 //    
 //    NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc] init];
@@ -261,7 +270,11 @@
     
     //Will save to NSUSerDefaults here
     NSMutableArray *spaceObjectAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:ADDED_SPACE_OBJECT_KEY] mutableCopy];
+    
+    if(!spaceObjectAsPropertyLists) spaceObjectAsPropertyLists = [[NSMutableArray alloc] init];
+        
     [spaceObjectAsPropertyLists addObject:[self spaceObjectAsAPropertyList:spaceObject]];
+    
     [[NSUserDefaults standardUserDefaults] setObject:spaceObjectAsPropertyLists forKey:ADDED_SPACE_OBJECT_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -276,12 +289,22 @@
 //convert space object to property list to save the data
 -(NSDictionary *)spaceObjectAsAPropertyList :(OWOuterSpaceObject *)spaceObject
 {
+    //image is too large to save in NSUSerDefault, so convert it into NSData using UIImagePNGRepresentation
     NSData *imageData = UIImagePNGRepresentation(spaceObject.spaceImage);
     NSDictionary *dictionary = @{PLANET_NAME : spaceObject.name, PLANET_GRAVITY : @(spaceObject.gravitationalForce), PLANET_DIAMETER : @(spaceObject.diameter),PLANET_YEAR_LENGTH : @(spaceObject.yearLength), PLANET_DAY_LENGTH : @(spaceObject.dayLength), PLANET_TEMPERATURE : @(spaceObject.temperature), PLANET_NUMBER_OF_MOONS : @(spaceObject.numberOfMoon), PLANET_NICKNAME :spaceObject.nickName, PLANET_INTERESTING_FACT : spaceObject.interestFact, PLANET_IMAGE : imageData};
     
     return dictionary;
 }
 
+//Do opposite to spaceObjectAsAPropertyList  method - convert property list to OWOuterSpaceObject to get out the data
+-(OWOuterSpaceObject *)spaceObjectForDictionary : (NSDictionary *)dictionary
+{
+    NSData *dataForImage = dictionary[PLANET_IMAGE];
+    UIImage *spaceObjectImage = [UIImage imageWithData:dataForImage];
+    OWOuterSpaceObject *spaceObject = [[OWOuterSpaceObject alloc] initWithData:dictionary andImage: spaceObjectImage];
+    
+    return spaceObject;
+}
 
 
 /*

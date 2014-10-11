@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OWOuterSpaceTableViewController.m"
-            timestampString = "434711190.376513"
+            timestampString = "434715500.264762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "-addSpaceObject:"
             landmarkType = "5">
          </BreakpointContent>
