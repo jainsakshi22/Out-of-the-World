@@ -18,6 +18,8 @@
 
 @implementation OWOuterSpaceTableViewController
 
+#define ADDED_SPACE_OBJECT_KEY @"Added Space Object Array"
+
 #pragma mark -Lazy Instantiation of Properties
 
 -(NSMutableArray *)planets
@@ -258,15 +260,20 @@
     [self.addedSpaceObjects addObject:spaceObject];
     
     //Will save to NSUSerDefaults here
+    NSMutableArray *spaceObjectAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:ADDED_SPACE_OBJECT_KEY] mutableCopy];
+    [spaceObjectAsPropertyLists addObject:[self spaceObjectAsAPropertyList:spaceObject]];
+    [[NSUserDefaults standardUserDefaults] setObject:spaceObjectAsPropertyLists forKey:ADDED_SPACE_OBJECT_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    NSLog(@"Add space object working");
+    //NSLog(@"Add space object working");
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    [self.tableView reloadData];
+    [self.tableView reloadData];    // to display the newly added planet in planets list
 }
 
 #pragma mark - Helper methods
 
+//convert space object to property list to save the data
 -(NSDictionary *)spaceObjectAsAPropertyList :(OWOuterSpaceObject *)spaceObject
 {
     NSData *imageData = UIImagePNGRepresentation(spaceObject.spaceImage);
@@ -274,6 +281,8 @@
     
     return dictionary;
 }
+
+
 
 /*
 // Override to support conditional editing of the table view.
